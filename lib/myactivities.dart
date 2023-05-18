@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyActivities extends StatelessWidget {
   const MyActivities({super.key});
@@ -64,6 +65,128 @@ class MyActivities extends StatelessWidget {
                     border: InputBorder.none,
                   ),
                 ),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(15, 3, 15, 3),
+                    decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        color: Color.fromARGB(255, 61, 119, 234)),
+                    child: Days("Daily"),
+                  ),
+                  Days("Weekly"),
+                  Days("Monthly"),
+                  Days("Yearly"),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: 150,
+                            height: 150,
+                            decoration: BoxDecoration(color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: 150,
+                            height: 150,
+                            decoration: BoxDecoration(color: Colors.white),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            width: 150,
+                            height: 150,
+                            decoration: BoxDecoration(color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            width: 150,
+                            height: 150,
+                            decoration: BoxDecoration(color: Colors.white),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Daily Meals",
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500, fontSize: 25),
+                    ),
+                    const CircleAvatar(
+                      backgroundColor: Color.fromARGB(255, 72, 56, 103),
+                      foregroundColor: Colors.white,
+                      child: Icon(
+                        Icons.lunch_dining_outlined,
+                        size: 30,
+                        weight: 10,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Daily Meals",
+                      style: GoogleFonts.poppins(
+                          fontWeight: FontWeight.w500, fontSize: 25),
+                    ),
+                    const CircleAvatar(
+                      backgroundColor: Color.fromARGB(255, 72, 56, 103),
+                      foregroundColor: Colors.white,
+                      child: Icon(
+                        Icons.info_outline,
+                        size: 30,
+                        weight: 10,
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),
@@ -71,4 +194,11 @@ class MyActivities extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget Days(String days) {
+  return Text(
+    days,
+    style: GoogleFonts.poppins(fontWeight: FontWeight.w500, fontSize: 16),
+  );
 }
